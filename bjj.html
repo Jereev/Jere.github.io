@@ -1,55 +1,303 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        height: 125px;
+        font-family: 'Lato', sans-serif;
+        color: #f5f5f5;
+        font-size: 24px;
+        font-weight: bold;
+        width: 100%;
+        margin: 0;
+        padding: 20px; 
+        box-sizing: border-box;
+        
+        
+    }
     
+    nav {
+        display: flex;
+        gap: 30px; 
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        flex-shrink: 0;
+        transform: translateX(-2%);
+        
+    }
+        nav a {
+        color: #f5f5f5; 
+        font-size: 24px; 
+        font-weight: bold;
+        text-decoration: none; 
+    }
+    
+    nav.fill ul li a {
+  position: relative;
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333333;
+  height: 2px;
+  transition: width 0.5s ease-in-out;
+}
+
+nav.fill ul li a:hover {
+  color: #fff;
+}
+
+nav.fill ul li a:hover:after {
+  width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: 15px; 
+}
+
+nav ul li {
+    display: inline; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5; 
+    padding: 10px 15px;
+}
+    
+    h1 { 
+      font-size: 36px; 
+      color: #f5f5f5; 
+      font-family: 'Anton', sans-serif;
+      flex-shrink: 0;
+    
+    }
+    h1 a {
+    color: #f5f5f5;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0px ;
+}
+    h2 {
+        font-size: 24px;
+        color: #333333;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+    }
+
+    
+    .kuva1 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+        }
+        body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+    p { 
+        font-family: 'Lato', sans-serif;
+        color:#333333;
+        padding: 0 20px;
+    }
+
+    footer {
+    height: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    
+}
+
+footer a {
+    color: #f1948a; 
+    text-decoration: none;
+    font-weight: normal; 
+}
+
+footer a:hover {
+    text-decoration: underline; 
+}
+    
+.burger-menu {
+    display: none; 
+    font-size: 30px;
+    color: #f5f5f5;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    left: 20px;
+    top: 45px; 
+    z-index: 1100;
+}
+
+/* Mobiilinäkymä */
+@media screen and (max-width: 768px) {
+  header {
+        justify-content: center;
+        position: relative;
+        padding: 10px 50px;
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
+
+    h1 {
+        text-align: center;
+        flex-grow: 1;
+        font-size: 28px;
+        padding: 10px 0;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #333333;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 60px 20px 20px;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        overflow: hidden;
+        display: flex; 
+    }
+
+    nav a {
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    nav.show {
+        left: 0;
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        margin-top: 40px;
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        padding: 20px 0;
+    }
+}
+
+</style>
+    
+    <title>Brasilian Jiujitsu</title>    
 <title>Brasilian Jiujitsu</title>
 </head>
 <body>
 <header style="background-color:#E63946;"> 
-    <h1 style="font-size: 36px; color: #f5f5f5;">Brasilian Jiujitsu</h1>
-
-<a href="index.html">Etusivu</a>
-<a href="bjj.html">Brasilialainen Jiujitsu</a>
-<a href="tekniikat.html">Tekniikat ja Videot</a>
-
+    <div class="burger-menu">&#9776;</div>
+    <h1><a href="index.html">Brasilian Jiujitsu</a></h1>
+    <nav class="fill">
+        
+<ul>
+<li><a href="index.html">Etusivu</a> </li>
+<li><a href="bjj.html">Brasilialainen Jiujitsu</a> </li>
+<li><a href="tekniikat.html">Tekniikat ja Videot</a> </li>
+</ul>
+</nav>
 
 </header>
 
 <main> 
 
-<h2>Brasilialainen Jiujitsu</h2>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam 
-    fugiat optio, doloremque labore asperiores quae hic, error nemo 
-    minima possimus dignissimos? Impedi
-     quo iusto minus voluptatibus dolor temporibus hic. Voluptas.
-     Brasilialainen jiujitsu on kamppailulaji, joka keskittyy erityisesti
-      matossa tapahtuvaan taisteluun,
-käyttäen tehokkaita lukkotekniikoita ja kuristuksia.
- Laji soveltuu kaikille ikään ja sukupuoleen katso-
-matta, ja sen harjoittelu kehittää sekä fyysistä kuntoa
- että henkistä kestävyyttä.></p>
-<p>Brasilialainen jiujitsu on kamppailulaji, joka keskittyy erityisesti
-    matossa tapahtuvaan taisteluun,
-    käyttäen tehokkaita lukkotekniikoita ja kuristuksia. Laji 
-    soveltuu kaikille ikään ja sukupuoleen katso-
-    matta, ja sen harjoittelu kehittää sekä fyysistä kuntoa että henkistä 
-    kestävyyttä.
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, 
-labore? Molestiae alias consequatur saepe quasi eligendi consequuntur 
-libero laborum labore consectetur sapiente. Commodi, iste!
- Ab asperiores quam aliquid? Tenetur, maiores.</p>
+    <h2>Brasilialainen Jiujitsu</h2>
+    <p><b>Brasilian Jiujitsu (BJJ) </b> ei ole pelkkä kamppailulaji, vaan monelle harrastajalle se muodostuu osaksi identiteettiä. Kolme kertaa viikossa tatamilla hikoilu kehittää kuntoa yllättävän monipuolisesti. Tunnin harjoituksen aikana syke nousee kuin juoksulenkillä, mutta samalla kehittyy myös lihasvoima ja liikkuvuus. Erityisesti lonkkien ja selän liikkuvuus paranee, kun opettelee pääsemään pois vastustajan alta guard-asennosta.</p>
+    <p><b>BJJ:ssä </b>  viehättää myös sen yhteisöllisyys. Salilla väännetään tosissaan, mutta ilman egoa, vaikka tänään saisitkin minut luovuttamaan triangle-kuristuksella, huomenna saatan löytää ratkaisun ja päästä pakoon. Tämä jatkuva oppiminen näkyy myös kisoissa, missä jopa häviöstä voi olla iloinen, jos on saanut kokeilla uutta tekniikkaa ja huomannut, mitä pitää vielä hioa. Harjoitusvuosien karttuessa monet huomaavat, että sininen, purppura ja ruskea vyö ovat vain välietappeja matkalla, joka ei oikeastaan pääty koskaan.</p>
+<div class="kuva1">
+<img src="bjj2.jpeg" alt="People having fun in BJJ class" style="width: 700px; height: auto;">
+</div>
+<h2>Historia</h2>
+<p>
+    <b>BJJ:n tarina alkaa Japanista, </b> missä jiujitsu oli samuraiden käyttämä taistelutaito. 1800-luvun lopulla judoksi kutsutun lajin kehitti japanilainen opettaja <b>Jigoro Kano,</b> joka jalosti perinteisestä jiujitsusta järjestelmällisemmän ja harjoitteluystävällisemmän kamppailulajin. Lajin kansainvälistymisessä merkittävää roolia näytteli judomestari <b>Mitsuyo Maeda,</b> joka kiersi maailmaa esittelemässä osaamistaan. Saavuttuaan Brasiliaan hän tutustui liikemies <b> Gaston Gracieen,</b> joka auttoi häntä asettumaan uuteen maahan. Kiitollisuudenosoituksena <b>Maeda </b>alkoi opettaa <b>Gracien poikaa Carlosia</b> judon ja jiujitsun salaisuuksiin.</p>
+<p><b>Carlos Gracie </b>omaksui <b>Maedan</b> opetukset ja siirsi tietotaitonsa edelleen perheen nuoremmille jäsenille. Erityisesti hänen veljensä <b>Hélio,</b> joka oli rakenteeltaan hintelä, joutui soveltamaan tekniikoita omaan kehoonsa sopiviksi. Tämä johti mullistavaan oivallukseen: kamppailussa voitiin hyödyntää vipuvoimaa ja kehon mekaniikkaa siten, että pienikokoisempikin harjoittelija pystyi puolustautumaan kookkaampaa vastustajaa vastaan. Näin syntynyt brasilialainen jiujitsu alkoi pian erottua judosta omaksi lajikseen. Siinä missä judo painotti pystyottelua ja näyttäviä heittoja, BJJ keskittyi mattotyöskentelyyn ja erilaisiin hallinta-, kuristus- ja niveltekniikoihin. Lajin ytimessä oli ajatus, että heikompikin voi voittaa vahvemman vastustajan oikealla tekniikalla.</p>
+<p>BJJ:n todellinen läpimurto tapahtui 1990-luvulla, kun <b>Royce Gracie </b>osallistui ensimmäisiin <b>Ultimate Fighting Championship (UFC) -turnauksiin.</b> Siellä hän päihitti järjestelmällisesti itseään huomattavasti suurempia vastustajia pelkällä teknisellä taidollaan. Nämä voitot toivat brasilialaisen jiujitsun valokeilaan ja osoittivat sen tehokkuuden todellisissa kamppailutilanteissa.</p>
+ <div class="kuva1">
+    <img src="bjj3.jpeg" alt="Gracie family" style="width: 700px; height: auto;">
+    </div>
+    <h2>Kilpailut ja tunnetut henkilöt</h2>
+<p>Brasilialaisen jiujitsun maailmassa <b>Roger Gracie</b> on noussut kenties kaikkien aikojen arvostetuimmaksi kilpailijaksi. Tämä kymmenkertainen IBJJF-liiton mustan vyön maailmanmestari tunnetaan erityisesti puhtaista perustekniikoistaan, hänen sanotaan välttävän monimutkaisia liikkeitä ja keskittyvän täydellisen hallinnan saavuttamiseen. <b>Gracien </b> hallintapelissä vastustaja joutuu usein mount-asentoon, josta hän viimeistelee ottelun tyylikkäällä käsitriangelikuristuksella.</p>
+<p>Kevyempien sarjojen parissa <b>Marcelo Garcia</b> on puolestaan muuttanut käsityksiä siitä, miten pienikokoisempi ottelija voi pärjätä isompia vastaan. <b> Garcia,</b> joka on niittänyt mainetta <b>Abu Dhabi Combat Clubin (ADCC)</b> kisoissa, on kehittänyt dynaamisen guardipelin, jossa etenkin hänen x-guard-tekniikkansa on tuottanut tulosta. Hänen takakuristuksensa ovat päättäneet lukemattomia otteluja, ja monet nykykilpailijat ovat ottaneet mallia hänen innovatiivisesta lähestymistavastaan.</p>
+<p>Modernin no-gi -jiujitsun maailmassa <b>Gordon Ryan </b> on noussut kiistattomaksi tähdeksi. <b>Ryan </b> on hallinnut <b>ADCC-kisoja</b> viime vuosina tavalla, joka on herättänyt sekä ihailua että kateutta kilpakumppaneissa. Hänen pelityylinsä on tunnetun aggressiivinen, ja erityisesti hänen jalkalukkonsa ovat tuoneet uuden ulottuvuuden kilpa-BJJ:hin. <b>Ryanin </b> metodinen lähestymistapa harjoitteluun ja kilpailemiseen on saanut aikaan valtavan muutoksen koko lajin harjoitteludynamiikassa.</p>
+<p>Raskaiden sarjojen puolella <b>Marcus "Buchecha" Almeida </b> on jättänyt lähtemättömän jälkensä lajiin. Tämä lukuisia <b>IBJJF-maailmanmestaruuksia </b> voittanut brasilialainen yhdistää harvinaislaatuisella tavalla äärimmäisen räjähtävän fysiikan ja hienostuneen tekniikan. <b> Buchecha </b> on tunnettu monipuolisuudestaan, hän on yhtä vaarallinen ylä, kuin alapelissäkin, mikä tekee hänestä erityisen vaikean vastustajan. Hänen siirtymisensä vapaaotteluun on osoitus brasilialaisen jiujitsun jatkuvasta kehityksestä kamppailulajien ekosysteemissä.</p>
 
- <p>Brasilialainen jiujitsu on kamppailulaji, joka keskittyy erityisesti
-    matossa tapahtuvaan taisteluun,
-    käyttäen tehokkaita lukkotekniikoita ja kuristuksia. Laji 
-    soveltuu kaikille ikään ja sukupuoleen katso-
-    matta, ja sen harjoittelu kehittää sekä fyysistä kuntoa että henkistä 
-    kestävyyttä.
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, 
-labore? Molestiae alias consequatur saepe quasi eligendi consequuntur 
-libero laborum labore consectetur sapiente. Commodi, iste!
- Ab asperiores quam aliquid? Tenetur, maiores.</p>
+ <div class="kuva1">
+    <img src="bjj4.jpg" alt="Gordon Ryan wins ADCC" style="width: 700px; height: auto;">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let burgerMenu = document.querySelector(".burger-menu");
+    let navMenu = document.querySelector("nav");
 
+    burgerMenu.addEventListener("click", function () {
+        navMenu.classList.toggle("show"); 
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
+            navMenu.classList.remove("show");
+        }
+    });
+});
+  </script>
 </main>
 
 <footer>
